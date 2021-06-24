@@ -1,0 +1,117 @@
+* {
+    font-family: "Kirang Haerang";
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(18, 159, 253);
+}
+
+h1 {
+    font-size: 10rem;
+}
+
+span {
+    color: rgb(233, 220, 41);
+}
+
+
+/* .dice-img:not(:first-of-type) {
+    visibility: hidden;
+} */
+
+img {
+    width: 40%;
+    margin-top: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    flex-grow: 2, 1, 1;
+    flex-wrap: wrap;
+}
+
+.header {
+    /* justify-content: center;
+    align-items: center; */
+    text-align: center;
+    margin-top: 3rem;
+    width: 120vh;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 5rem;
+    margin-top: 4rem;
+}
+
+.player {
+    width: 60vh;
+    height: 50vh;
+}
+
+.versus {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 52vh;
+}
+
+.roll {
+    width: 100vh;
+}
+
+button {
+    background: rgb(233, 220, 41);
+    background-image: -webkit-linear-gradient(top, #ac0505, rgb(233, 220, 41));
+    background-image: -moz-linear-gradient(top, #ac0505, rgb(233, 220, 41));
+    background-image: -ms-linear-gradient(top, #ac0505, rgb(233, 220, 41));
+    background-image: -o-linear-gradient(top, #ac0505, rgb(233, 220, 41));
+    background-image: -webkit-gradient(to bottom, #ac0505, rgb(233, 220, 41));
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    color: white;
+    font-size: 3rem;
+    padding: 1rem;
+    -webkit-box-shadow: 1px 0 65px 15px #FFAE00;
+    -moz-box-shadow: 1px 0 65px 15px #FFAE00;
+    box-shadow: 1px 0 65px 15px #FFAE00;
+    text-shadow: -2px 0 40px #FFAE00;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    width: 25vh;
+}
+
+button:hover {
+    border: solid #337FED 0;
+    background: #1E62D0;
+    background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
+    background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
+    background-image: -ms-linear-gradient(top, #1E62D0, #3D94F6);
+    background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
+    background-image: -webkit-gradient(to bottom, #1E62D0, #3D94F6);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+footer {
+    display: none;
+}
