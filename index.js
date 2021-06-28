@@ -4,91 +4,58 @@ btn.addEventListener("click", rollDice);
 
 function rollDice() {
 
-    //mam dwie kostki. Funkcja losuje Math.random liczbe 1-6 dla Playera i osobno dla Big Dice. Stosownie do liczby pojawia sie odpowiednie img. Jesli liczba Playera jest wieksza
-    //to wygrywa, jesli liczba Big Dice'a jest wieksza, to on wygrywa. Licznik liczy zwyciestwa. Po trzech zwyciestwach komunikat. Gramy do pieciu. Po 5. rundzie wynik.
-    let diceOfUser;
-    let diceOfBigDice;
-    //let userCounter = 0;
-    //let bigDiceCounter = 0;
+    let randomNumber1 = Math.floor(Math.random() * 6) + 1;
+    let randomNumber2 = Math.floor(Math.random() * 6) + 1;
 
-    //for (let i = 1; i < 5; i++) {
-    diceOfUser = Math.floor(Math.random() * 6) + 1;
-    diceOfBigDice = Math.floor(Math.random() * 6) + 1;
+    let randomDiceImage1 = "images/dice" + randomNumber1 + ".png";
+    let randomDiceImage2 = "images/dice" + randomNumber2 + ".png";
 
-    changeDieImage(diceOfUser, diceOfBigDice);
+    let image1 = document.querySelectorAll("img")[0].setAttribute("src", randomDiceImage1);
+    let image2 = document.querySelectorAll("img")[1].setAttribute("src", randomDiceImage2);
 
-    if (diceOfUser > diceOfBigDice) {
-        //userCounter++;
+
+    if (randomNumber1 > randomNumber2) {
         generateFeedback("user");
 
-
-    } else if (diceOfUser < diceOfBigDice) {
-        //bigDiceCounter++;
+    } else if (randomNumber1 < randomNumber2) {
         generateFeedback("bigDice");
     } else {
-        //i--;
         generateFeedback("draw");
     }
 
-    //}
 
-    calculateResult(userCounter, bigDiceCounter);
+    //calculateResult(userCounter, bigDiceCounter);
 }
 //utworz array ze stringami-komentarzami co do gry, losowy z nich bedzie wyswietlany w zaleznosci od zwyciestwa/przegranej
 function generateFeedback(player) {
-    let arrayOfPlayer = ["Nice one!", "Not your first time, uh? :)", "Don't stop me now!"];
-    let arrayOfBigDice = ["Big Dice attacks!", "Don't give up!", "Big Dice knows how to play dice!"];
-    let arrayOfDraw = ["That's a draw!", "Let's try again!", "Wait a minute! We need a rerun!"];
+
+    let arrayOfPlayer = ["Nice one!", "Amazing!", "Don't stop me now!", "You got lucky!"];
+    let arrayOfBigDice = ["Big Dice attacks!", "Don't give up!", "Maybe next time!"];
+    let arrayOfDraw = ["That's a draw!", "Let's try again!", "We need a rerun!"];
+
+    let playerFeedback = Math.floor(Math.random() * arrayOfPlayer.length);
+    let bigDiceFeedback = Math.floor(Math.random() * arrayOfBigDice.length);
+    let drawFeedback = Math.floor(Math.random() * arrayOfDraw.length);
+
     if (player === "user") {
         //display a window with random string of arrayOfPlayer
-        alert("you win");
+        document.querySelector("h1").innerHTML = arrayOfPlayer[playerFeedback];
     } else if (player === "bigDice") {
         //display a window with random string of arrayOfBigDice
-        alert("Big Dice wins");
+        document.querySelector("h1").innerHTML = arrayOfBigDice[bigDiceFeedback];
 
     } else if (player === "draw") {
         //display an array about a draw
-        alert("it's a draw");
+        document.querySelector("h1").innerHTML = arrayOfDraw[drawFeedback];
     }
 }
 
 
-function calculateResult(resultOfUser, resultOfBigDice) {
-    if (resultOfUser > resultOfBigDice) {
-        //display a window with congratulations
-    } else {
-        //display a window with consolation
-    }
+// function calculateResult(resultOfUser, resultOfBigDice) {
+//     if (resultOfUser > resultOfBigDice) {
+//         //display a window with congratulations
+//     } else {
+//         //display a window with consolation
+//     }
 
-}
-
-function changeDieImage(diceOfUser, diceOfBigDice) {
-    if (diceOfUser === 1) {
-        document.querySelector(".user-dice-img").setAttribute("src", "images/dice1.png")
-    } else if (diceOfUser === 2) {
-        document.querySelector(".user-dice-img").setAttribute("src", "images/dice2.png");
-    } else if (diceOfUser === 3) {
-        document.querySelector(".user-dice-img").setAttribute("src", "images/dice3.png");
-    } else if (diceOfUser === 4) {
-        document.querySelector(".user-dice-img").setAttribute("src", "images/dice4.png");
-    } else if (diceOfUser === 5) {
-        document.querySelector(".user-dice-img").setAttribute("src", "images/dice5.png");
-    } else if (diceOfUser === 6) {
-        document.querySelector(".user-dice-img").setAttribute("src", "images/dice6.png");
-    }
-
-    if (diceOfBigDice === 1) {
-        document.querySelector(".bigdice-dice-img").setAttribute("src", "images/dice1.png");
-    } else if (diceOfBigDice === 2) {
-        document.querySelector(".bigdice-dice-img").setAttribute("src", "images/dice2.png");
-    } else if (diceOfBigDice === 3) {
-        document.querySelector(".bigdice-dice-img").setAttribute("src", "images/dice3.png");
-    } else if (diceOfBigDice === 4) {
-        document.querySelector(".bigdice-dice-img").setAttribute("src", "images/dice4.png");
-    } else if (diceOfBigDice === 5) {
-        document.querySelector(".bigdice-dice-img").setAttribute("src", "images/dice5.png");
-    } else if (diceOfBigDice === 6) {
-        document.querySelector(".bigdice-dice-img").setAttribute("src", "images/dice6.png");
-
-    }
-}
+// }
